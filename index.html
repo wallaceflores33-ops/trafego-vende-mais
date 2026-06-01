@@ -13,6 +13,7 @@
   --bg3:#16161f;
   --green:#00ff87;
   --green2:#00cc6a;
+  --blue:#0ea5e9;
   --text:#f0f0f0;
   --muted:#8888a0;
   --border:#ffffff12;
@@ -23,7 +24,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,#00ff8718 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,#0ea5e912 0%,transparent 50%),var(--bg)}
-.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse at center,#000 0%,transparent 80%);pointer-events:none}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:50px 50px;-webkit-mask-image:radial-gradient(ellipse at center,#000 0%,transparent 80%);mask-image:radial-gradient(ellipse at center,#000 0%,transparent 80%);pointer-events:none}
 .container{max-width:1100px;margin:0 auto}
 .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:2}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#00ff8712;border:1px solid #00ff8730;color:var(--green);font-size:.8rem;font-weight:700;padding:8px 18px;border-radius:999px;margin-bottom:28px;letter-spacing:.5px;text-transform:uppercase}
@@ -32,21 +33,18 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1.8px;margin-bottom:24px}
 h1 .hl{color:var(--green);text-shadow:0 0 40px #00ff8740}
 .hero-sub{font-size:1.1rem;color:#c5c5d8;margin-bottom:40px;line-height:1.75;max-width:680px;margin-left:auto;margin-right:auto}
-.benefits{list-style:none;margin-bottom:0;display:inline-flex;flex-direction:column;gap:14px;text-align:left}
+.benefits{list-style:none;display:inline-flex;flex-direction:column;gap:14px;text-align:left}
 .benefits li{display:flex;align-items:center;gap:12px;font-size:1rem;color:#e0e0f0;font-weight:500}
 .benefits li::before{content:'✓';width:24px;height:24px;min-width:24px;background:var(--green);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:900;box-shadow:0 0 14px #00ff8750}
 .hero-proof{display:flex;justify-content:center;gap:40px;margin-top:48px;flex-wrap:wrap}
 .proof-item{text-align:center}
 .proof-num{font-size:2rem;font-weight:900;color:var(--green);line-height:1}
 .proof-lbl{font-size:.8rem;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#000;font-weight:800;font-size:1.05rem;padding:18px 36px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;letter-spacing:.2px}
-.btn:hover{background:var(--green2);transform:translateY(-2px)}
-.btn-large{font-size:1.15rem;padding:22px 44px}
 
 /* SECTION */
 section{padding:90px 24px}
 .section-head{text-align:center;max-width:680px;margin:0 auto 56px}
-.section-tag{display:inline-block;background:#0ea5e915;border:1px solid #0ea5e930;color:#0ea5e9;font-size:.75rem;font-weight:700;padding:6px 16px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.section-tag{display:inline-block;background:#0ea5e915;border:1px solid #0ea5e930;color:var(--blue);font-size:.75rem;font-weight:700;padding:6px 16px;border-radius:999px;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
 h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;line-height:1.2;letter-spacing:-1px;margin-bottom:16px}
 h2 .hl{color:var(--green)}
 .section-sub{color:var(--muted);font-size:1.05rem;line-height:1.6}
@@ -92,20 +90,18 @@ h2 .hl{color:var(--green)}
 .oferta-list li::before{content:'✓';width:22px;height:22px;min-width:22px;background:var(--green);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900}
 .oferta-box .btn{width:100%;justify-content:center}
 
-/* GARANTIA */
-.garantia-box{max-width:800px;margin:0 auto;background:var(--card);border:2px solid #00ff8840;border-radius:20px;padding:40px;text-align:center}
-.garantia-box h3{font-size:1.3rem;font-weight:800;margin-bottom:16px;color:var(--green)}
-.garantia-box p{font-size:1rem;line-height:1.8;color:#d0d0e8}
+/* BTN */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#000;font-weight:800;font-size:1.05rem;padding:18px 36px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;letter-spacing:.2px}
+.btn:hover{background:var(--green2);transform:translateY(-2px)}
+.btn-large{font-size:1.15rem;padding:22px 44px}
 
 /* FORMULARIO */
-.form-section{background:var(--bg2)}
 .form-container{max-width:800px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px}
 .form-desc{color:var(--muted);margin-bottom:32px;font-size:1rem}
 .form-group{margin-bottom:24px}
 .form-group label{display:block;font-weight:600;margin-bottom:8px;font-size:.95rem}
-.form-input,.form-select,.form-textarea{width:100%;padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:.9rem;transition:border-color .2s}
-.form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--green)}
-.form-textarea{resize:vertical;min-height:100px}
+.form-input,.form-select{width:100%;padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:.9rem;transition:border-color .2s}
+.form-input:focus,.form-select:focus{outline:none;border-color:var(--green)}
 .form-checkboxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
 .checkbox-item{display:flex;align-items:center;gap:8px}
 .checkbox-item input{width:18px;height:18px;accent-color:var(--green);cursor:pointer}
@@ -116,6 +112,7 @@ h2 .hl{color:var(--green)}
 /* FORM MODAL */
 .form-modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:200;padding:24px}
 .form-modal-content{background:var(--bg);border:1px solid var(--border);border-radius:20px;max-width:800px;width:100%;max-height:90vh;overflow-y:auto;position:relative;padding:40px}
+.form-modal-content h2{margin-bottom:8px}
 .form-close{position:absolute;top:20px;right:20px;width:40px;height:40px;background:var(--card);border:1px solid var(--border);border-radius:50%;cursor:pointer;font-size:1.5rem;display:flex;align-items:center;justify-content:center;transition:all .2s;color:var(--text)}
 .form-close:hover{border-color:var(--green);color:var(--green)}
 
@@ -126,13 +123,53 @@ h2 .hl{color:var(--green)}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:.8rem;color:var(--muted)}
 
 /* RESPONSIVE */
+@media(max-width:1024px){
+  .hero{padding:80px 24px 40px}
+  section{padding:70px 24px}
+}
 @media(max-width:768px){
-  h1{font-size:2rem}
-  h2{font-size:1.5rem}
-  section{padding:60px 24px}
+  h1{font-size:1.9rem}
+  h2{font-size:1.4rem}
+  section{padding:50px 20px}
+  .hero{padding:70px 20px 30px}
+  .hero-inner{max-width:100%}
+  .hero-sub{font-size:1rem}
+  .benefits li{font-size:.9rem}
+  .hero-proof{gap:24px;margin-top:36px}
+  .proof-num{font-size:1.5rem}
+  .section-head{margin-bottom:40px}
+  .grid-2{grid-template-columns:1fr}
+  .entregaveis-grid{grid-template-columns:1fr}
+  .bonus-grid{grid-template-columns:1fr}
+  .checklist{grid-template-columns:1fr}
   .oferta-box{padding:32px 24px}
+  .oferta-box h2{font-size:1.5rem}
+  .price{font-size:2rem}
   .form-container{padding:24px}
+  .form-modal-content{padding:32px 20px}
+  .btn{font-size:.95rem;padding:14px 28px}
+  .btn-large{font-size:1rem;padding:16px 32px}
+}
+@media(max-width:480px){
+  h1{font-size:1.6rem;letter-spacing:-0.5px}
+  h2{font-size:1.2rem}
+  section{padding:40px 16px}
+  .hero{padding:60px 16px 25px}
+  .hero-sub{font-size:.95rem;margin-bottom:24px}
+  .hero-proof{gap:18px}
+  .proof-num{font-size:1.3rem}
+  .proof-lbl{font-size:.7rem}
+  .card{padding:18px}
+  .entregavel{padding:16px;gap:12px}
+  .oferta-box{padding:24px 16px}
+  .oferta-box h2{font-size:1.3rem}
+  .price{font-size:1.5rem;margin:20px 0}
+  .bonus-card{padding:20px}
   .form-checkboxes{grid-template-columns:1fr}
+  .form-modal{padding:12px}
+  .form-modal-content{padding:24px 16px}
+  .form-close{width:32px;height:32px;top:12px;right:12px;font-size:1.2rem}
+  .divider{margin:0 16px}
 }
 </style>
 </head>
@@ -152,7 +189,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;tex
     </ul>
     <div class="hero-proof">
       <div class="proof-item"><div class="proof-num">+340%</div><div class="proof-lbl">Leads gerados</div></div>
-      <div class="proof-item"><div class="proof-num">8.2x</div><div class="proof-lbl">ROAS médio</div></div>
       <div class="proof-item"><div class="proof-num">-62%</div><div class="proof-lbl">Custo por lead</div></div>
     </div>
   </div>
@@ -268,136 +304,107 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;tex
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- GARANTIA -->
-<section>
-  <div class="container">
-    <div class="garantia-box">
-      <h3>Garantia de Performance</h3>
-      <p>Se em 60 dias você não tiver um aumento significativo no número de clientes ou faturamento, devolvemos 100% do valor investido nesse período. Sem enrolação. Resultado ou seu dinheiro de volta.</p>
-    </div>
-  </div>
-</section>
-
-
+<!-- FORMULÁRIO MODAL -->
 <div id="formModal" class="form-modal" style="display:none">
   <div class="form-modal-content">
     <button class="form-close" onclick="fecharFormulario()">✕</button>
-    <div class="form-container">
-      <h2>Preencha os dados abaixo para receber uma<br><span class="hl">proposta personalizada</span></h2>
-      <p class="form-desc">Vamos analisar seu Instagram e Facebook antes de te passar a proposta.</p>
-      
-      <form id="qualificationForm">
-        <div class="form-group">
-          <label>1. Qual seu WhatsApp? * <span style="color:var(--green)">(obrigatório)</span></label>
-          <input type="tel" class="form-input" name="whatsapp" placeholder="(11) 99999-9999" required/>
-        </div>
+    <h2>Preencha os dados abaixo para receber uma<br><span style="color:var(--green)">proposta personalizada</span></h2>
+    <p class="form-desc">Vamos analisar seu Instagram e Facebook antes de te passar a proposta.</p>
+    
+    <form id="qualificationForm">
+      <div class="form-group">
+        <label>1. Qual seu WhatsApp? <span style="color:var(--green)">(obrigatório)</span></label>
+        <input type="tel" class="form-input" name="whatsapp" placeholder="(11) 99999-9999" required/>
+      </div>
 
-        <div class="form-group">
-          <label>2. Qual seu nome?</label>
-          <input type="text" class="form-input" name="nome_pessoa"/>
-        </div>
+      <div class="form-group">
+        <label>2. Qual seu nome?</label>
+        <input type="text" class="form-input" name="nome_pessoa"/>
+      </div>
 
-        <div class="form-group">
-          <label>3. Nome da sua empresa</label>
-          <input type="text" class="form-input" name="empresa"/>
-        </div>
+      <div class="form-group">
+        <label>3. Nome da sua empresa</label>
+        <input type="text" class="form-input" name="empresa"/>
+      </div>
 
-        <div class="form-group">
-          <label>4. Qual seu nicho / o que você vende?</label>
-          <input type="text" class="form-input" name="nicho"/>
-        </div>
+      <div class="form-group">
+        <label>4. Qual seu nicho / o que você vende?</label>
+        <input type="text" class="form-input" name="nicho"/>
+      </div>
 
-        <div class="form-group">
-          <label>5. Qual seu faturamento médio mensal atual?</label>
-          <select class="form-select" name="faturamento">
-            <option value="">Selecione uma opção</option>
-            <option value="Até R$10 mil">Até R$ 10 mil</option>
-            <option value="R$10-30k">R$ 10k – 30k</option>
-            <option value="R$30-60k">R$ 30k – 60k</option>
-            <option value="R$60-100k">R$ 60k – 100k</option>
-            <option value="Acima de R$100k">Acima de R$ 100k</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label>5. Qual seu faturamento médio mensal atual?</label>
+        <select class="form-select" name="faturamento">
+          <option value="">Selecione uma opção</option>
+          <option value="Até R$10 mil">Até R$ 10 mil</option>
+          <option value="R$10-30k">R$ 10k – 30k</option>
+          <option value="R$30-60k">R$ 30k – 60k</option>
+          <option value="R$60-100k">R$ 60k – 100k</option>
+          <option value="Acima de R$100k">Acima de R$ 100k</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label>6. Instagram da sua empresa</label>
-          <input type="text" class="form-input" name="instagram" placeholder="@seuperfil"/>
-        </div>
+      <div class="form-group">
+        <label>6. Instagram da sua empresa</label>
+        <input type="text" class="form-input" name="instagram" placeholder="@seuperfil"/>
+      </div>
 
-        <div class="form-group">
-          <label>7. Página do Facebook da sua empresa</label>
-          <input type="text" class="form-input" name="facebook" placeholder="seuperfil"/>
-        </div>
+      <div class="form-group">
+        <label>7. Página do Facebook da sua empresa</label>
+        <input type="text" class="form-input" name="facebook" placeholder="seuperfil"/>
+      </div>
 
-        <div class="form-group">
-          <label>8. Você já investe em tráfego pago?</label>
-          <select class="form-select" name="ja_investe">
-            <option value="">Selecione uma opção</option>
-            <option value="Sim, invisto todo mês">Sim, invisto todo mês</option>
-            <option value="Já investi, mas parei">Já investi, mas parei</option>
-            <option value="Nunca investi">Nunca investi</option>
-            <option value="Estou testando pequeno">Estou testando pequeno</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label>8. Você já investe em tráfego pago?</label>
+        <select class="form-select" name="ja_investe">
+          <option value="">Selecione uma opção</option>
+          <option value="Sim, invisto todo mês">Sim, invisto todo mês</option>
+          <option value="Já investi, mas parei">Já investi, mas parei</option>
+          <option value="Nunca investi">Nunca investi</option>
+          <option value="Estou testando pequeno">Estou testando pequeno</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label>9. Qual seu maior problema no momento? (Escolha até 2)</label>
-          <div class="form-checkboxes">
-            <div class="checkbox-item">
-              <input type="checkbox" name="problemas" value="Poucos clientes" id="prob1"/>
-              <label for="prob1">Poucos clientes</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="problemas" value="Leads ruins" id="prob2"/>
-              <label for="prob2">Leads ruins</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="problemas" value="Custo alto" id="prob3"/>
-              <label for="prob3">Custo alto</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="problemas" value="Vendas travadas" id="prob4"/>
-              <label for="prob4">Vendas travadas</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="problemas" value="Falta de tempo" id="prob5"/>
-              <label for="prob5">Falta de tempo</label>
-            </div>
-          </div>
+      <div class="form-group">
+        <label>9. Qual seu maior problema no momento? (Escolha até 2)</label>
+        <div class="form-checkboxes">
+          <div class="checkbox-item"><input type="checkbox" name="problemas" value="Poucos clientes" id="prob1"/><label for="prob1">Poucos clientes</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="problemas" value="Leads ruins" id="prob2"/><label for="prob2">Leads ruins</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="problemas" value="Custo alto" id="prob3"/><label for="prob3">Custo alto</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="problemas" value="Vendas travadas" id="prob4"/><label for="prob4">Vendas travadas</label></div>
+          <div class="checkbox-item"><input type="checkbox" name="problemas" value="Falta de tempo" id="prob5"/><label for="prob5">Falta de tempo</label></div>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label>10. Quantos novos clientes você quer por mês?</label>
-          <input type="number" class="form-input" name="clientes_meta" min="1"/>
-        </div>
+      <div class="form-group">
+        <label>10. Quantos novos clientes você quer por mês?</label>
+        <input type="number" class="form-input" name="clientes_meta" min="1"/>
+      </div>
 
-        <div class="form-group">
-          <label>11. Qual investimento mensal em anúncios você está disposto a fazer?</label>
-          <select class="form-select" name="investimento">
-            <option value="">Selecione uma opção</option>
-            <option value="Até R$2.000/mês">Até R$ 2.000/mês</option>
-            <option value="R$2.000-5.000/mês">R$ 2.000 – 5.000/mês</option>
-            <option value="R$5.000-10.000/mês">R$ 5.000 – 10.000/mês</option>
-            <option value="Acima de R$10.000/mês">Acima de R$ 10.000/mês</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label>11. Qual investimento mensal em anúncios você está disposto a fazer?</label>
+        <select class="form-select" name="investimento">
+          <option value="">Selecione uma opção</option>
+          <option value="Até R$2.000/mês">Até R$ 2.000/mês</option>
+          <option value="R$2.000-5.000/mês">R$ 2.000 – 5.000/mês</option>
+          <option value="R$5.000-10.000/mês">R$ 5.000 – 10.000/mês</option>
+          <option value="Acima de R$10.000/mês">Acima de R$ 10.000/mês</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label>12. Você é o dono ou tomador de decisão?</label>
-          <select class="form-select" name="decisor">
-            <option value="">Selecione uma opção</option>
-            <option value="Sim">Sim</option>
-            <option value="Não">Não</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label>12. Você é o dono ou tomador de decisão?</label>
+        <select class="form-select" name="decisor">
+          <option value="">Selecione uma opção</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+      </div>
 
-        <div class="form-group submit">
-          <button type="submit" class="btn btn-large">QUERO SIM, RECEBER PROPOSTA</button>
-        </div>
-      </form>
-    </div>
+      <div class="form-group submit">
+        <button type="submit" class="btn btn-large">QUERO SIM, RECEBER PROPOSTA</button>
+      </div>
+    </form>
   </div>
 </div>
 
