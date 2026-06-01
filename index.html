@@ -262,22 +262,27 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;tex
       
       <form id="qualificationForm">
         <div class="form-group">
-          <label>1. Qual seu nome? *</label>
+          <label>1. Qual seu WhatsApp? * <span style="color:var(--green)">(obrigatório)</span></label>
+          <input type="tel" class="form-input" name="whatsapp" placeholder="(11) 99999-9999" required/>
+        </div>
+
+        <div class="form-group">
+          <label>2. Qual seu nome?</label>
           <input type="text" class="form-input" name="nome_pessoa"/>
         </div>
 
         <div class="form-group">
-          <label>2. Nome da sua empresa *</label>
+          <label>3. Nome da sua empresa</label>
           <input type="text" class="form-input" name="empresa"/>
         </div>
 
         <div class="form-group">
-          <label>3. Qual seu nicho / o que você vende? *</label>
+          <label>4. Qual seu nicho / o que você vende?</label>
           <input type="text" class="form-input" name="nicho"/>
         </div>
 
         <div class="form-group">
-          <label>4. Qual seu faturamento médio mensal atual? *</label>
+          <label>5. Qual seu faturamento médio mensal atual?</label>
           <select class="form-select" name="faturamento">
             <option value="">Selecione uma opção</option>
             <option value="Até R$10 mil">Até R$ 10 mil</option>
@@ -289,17 +294,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;tex
         </div>
 
         <div class="form-group">
-          <label>5. Instagram da sua empresa *</label>
+          <label>6. Instagram da sua empresa</label>
           <input type="text" class="form-input" name="instagram" placeholder="@seuperfil"/>
         </div>
 
         <div class="form-group">
-          <label>6. Página do Facebook da sua empresa *</label>
+          <label>7. Página do Facebook da sua empresa</label>
           <input type="text" class="form-input" name="facebook" placeholder="seuperfil"/>
         </div>
 
         <div class="form-group">
-          <label>7. Você já investe em tráfego pago? *</label>
+          <label>8. Você já investe em tráfego pago?</label>
           <select class="form-select" name="ja_investe">
             <option value="">Selecione uma opção</option>
             <option value="Sim, invisto todo mês">Sim, invisto todo mês</option>
@@ -310,7 +315,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;tex
         </div>
 
         <div class="form-group">
-          <label>8. Qual seu maior problema no momento? (Escolha até 2) *</label>
+          <label>9. Qual seu maior problema no momento? (Escolha até 2)</label>
           <div class="form-checkboxes">
             <div class="checkbox-item">
               <input type="checkbox" name="problemas" value="Poucos clientes" id="prob1"/>
@@ -336,12 +341,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;tex
         </div>
 
         <div class="form-group">
-          <label>9. Quantos novos clientes você quer por mês? *</label>
+          <label>10. Quantos novos clientes você quer por mês?</label>
           <input type="number" class="form-input" name="clientes_meta" min="1"/>
         </div>
 
         <div class="form-group">
-          <label>10. Qual investimento mensal em anúncios você está disposto a fazer? *</label>
+          <label>11. Qual investimento mensal em anúncios você está disposto a fazer?</label>
           <select class="form-select" name="investimento">
             <option value="">Selecione uma opção</option>
             <option value="Até R$2.000/mês">Até R$ 2.000/mês</option>
@@ -352,7 +357,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;tex
         </div>
 
         <div class="form-group">
-          <label>11. Você é o dono ou tomador de decisão? *</label>
+          <label>12. Você é o dono ou tomador de decisão?</label>
           <select class="form-select" name="decisor">
             <option value="">Selecione uma opção</option>
             <option value="Sim">Sim</option>
@@ -385,6 +390,10 @@ function fecharFormulario(){
 document.getElementById('qualificationForm').addEventListener('submit',function(e){
   e.preventDefault();
   
+  // WhatsApp obrigatório
+  const whatsapp=document.querySelector('input[name="whatsapp"]').value.trim();
+  if(!whatsapp){alert('❌ O WhatsApp é obrigatório!');return}
+  
   // Validar checkboxes (máximo 2)
   const problemas=document.querySelectorAll('input[name="problemas"]:checked');
   if(problemas.length>2){alert('❌ Máximo 2 problemas. Escolha até 2 opções');return}
@@ -392,6 +401,7 @@ document.getElementById('qualificationForm').addEventListener('submit',function(
   // Preparar dados
   const problemasArray=[...problemas].map(el=>el.value);
   const data={
+    whatsapp:whatsapp,
     nome_pessoa:document.querySelector('input[name="nome_pessoa"]').value.trim(),
     empresa:document.querySelector('input[name="empresa"]').value.trim(),
     nicho:document.querySelector('input[name="nicho"]').value.trim(),
@@ -407,7 +417,7 @@ document.getElementById('qualificationForm').addEventListener('submit',function(
   };
   
   // Enviar para Google Sheets
-  const WEBHOOK_URL='https://script.google.com/macros/s/AKfycbzCy96LRtC28rocaURfpNTtrFSD8TVLu0W27vJY9KJd-0AkpzWbWk4ZJ8K2XFS7jMRa/exec';
+  const WEBHOOK_URL='https://script.google.com/macros/s/AKfycbzJL9ugwdPV7CetveokXi3_-VArN0SVIUwafJj-967adtutT0Rh84ATsJSqUkAeLWfE/exec';
   
   fetch(WEBHOOK_URL,{
     method:'POST',
