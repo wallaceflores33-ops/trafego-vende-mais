@@ -4,6 +4,14 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Tráfego Pago Profissional - TrafficPro</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-574803502"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-574803502');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -462,6 +470,12 @@ document.getElementById('qualificationForm').addEventListener('submit',function(
   })
   .then(()=>{
     console.log('Dados enviados:',data);
+    // Dispara conversão do Google Ads
+    gtag('event', 'conversion', {
+      'send_to': 'AW-574803502/f8JwCKmuuLccEK6ci5IC',
+      'value': 1.0,
+      'currency': 'BRL'
+    });
     alert('✅ Obrigado! Vamos analisar seus dados e enviar uma proposta personalizada em breve.');
     this.reset();
     fecharFormulario();
